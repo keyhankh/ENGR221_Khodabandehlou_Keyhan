@@ -1,0 +1,15 @@
+a. The names of the functions in this file are adventure () and create_player()
+
+b. The adventure() function is called on line 65
+
+c. the create_player() function is called on line 20
+
+d. the adventure() function is called on the first line when the script is ran 
+
+e. the input() function does not print anything by itself. it displays the prompt and waits for user to type an answer
+
+f. if user doesn't input "Warrior" or "Mage", the program prints "A unique specialty I do not recognize! Intriguing..."
+
+g. I think the curly braces {} are placeholders used with .format(). 
+
+h. the scsript runs in an infinite loop since win stays equal to 0. To prevent this, A line changes to 1 when the player wins. Or I could change "return 0" to "return 1" at the end of adventure(). 
