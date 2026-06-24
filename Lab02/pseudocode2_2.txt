@@ -1,0 +1,21 @@
+2.2 Player Movement Pseudocode
+
+move_player_right():
+    Get the cell to the right of the player
+    If that cell exists:
+        Move the player to that cell
+
+move_player_left():
+    Get the cell to the left of the player
+    If that cell exists:
+        Move the player to that cell
+
+move_player_up():
+    Get the cell above the player
+    If that cell exists:
+        Move the player to that cell
+
+move_player_down():
+    Get the cell below the player
+    If that cell exists:
+        Move the player to that cell

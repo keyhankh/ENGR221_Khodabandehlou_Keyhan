@@ -1,0 +1,57 @@
+2.4 Add Enemy Mechanics Pseudocode
+
+add_enemy():
+    Get the bottom right cell of the board
+    If bottom right cell has player:
+        Empty player cell
+        Set game over flag
+    Else If the bottom cell has food:
+        Remove that cell from the food list
+        Change the cell to Enemy
+        Add cell to the enemies list
+    Else If the bottom cell is empty:
+        Change cell to Enemy
+        Add cell to the enemies list
+        Decrease number of empty cells by 1
+    Else: 
+        Do nothing because there is already enemy there
+
+move_enemy_to_cell(enemy_cell, cell, idx):
+    If destination of cell is None: 
+        Do nothing
+    Else If the destination cell has another enemy: 
+        Do nothing
+    Else If destination cell has the player: 
+        Empty old enemy cell
+        Move enemy into the enemies list to the destination cell
+        Set destination cell to enemy
+        Set game over
+    Else if destination cell has food:
+        Remove food from the food list
+        Empty old enemy cell
+        Move enemy in the enemies list to the destination cell
+        Set destination to enemy
+    Else: 
+        Empty the old enemy cell
+        Move enemy in the enemies list to the destination cell
+        Set destination cell to enemy
+
+move_enemy_left(idx):
+    Get enemy at index idx
+    Get the west neighbor of that enemy
+    Move enemy to that neighbor
+
+move_enemy_right(idx):
+    Get enemy at index idx
+    Get the east neighbor of that enemy
+    Move enemy to that neighbor
+
+move_enemy_up(idx):
+    Get enemy at index idx
+    Get the north neighbor of that enemy
+    Move enemy to that neighbor
+
+move_enemy_down(idx):
+    Get enemy at index idx
+    Get the south neighbor of that enemy
+    Move enemy to that neighbor

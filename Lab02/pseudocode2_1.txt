@@ -1,0 +1,31 @@
+get_west_neighbor(cell):
+    Get the row from the cell
+    Get the column from the cell
+    If the column is 0:
+        Return None
+    Otherwise:
+        Return the cell from the board at the same row and column - 1
+
+get_east_neighbor(cell):
+    Get the row from the cell
+    Get the column from the cell
+    If the column is the last column:
+        Return None
+    Otherwise:
+        Return the cell from the board at the same row and column + 1
+
+get_north_neighbor(cell):
+    Get the row from the cell
+    Get the column from the cell
+    If the row is 0:
+        Return None
+    Otherwise:
+        Return the cell from the board at row - 1 and the same column
+
+get_south_neighbor(cell):
+    Get the row from the cell
+    Get the column from the cell
+    If the row is the last row:
+        Return None
+    Otherwise:
+        Return the cell from the board at row + 1 and the same column

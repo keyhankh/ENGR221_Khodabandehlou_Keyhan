@@ -1,0 +1,14 @@
+a. How do we access values from the Preferences file? 
+    to access files from the preferences file, using dot (.) operator like 'tom.meow()'
+
+b. What type is self.board? 
+    self.board is a 2D list; a list of lists. 
+
+c. What type is each element of self.board? 
+    each element of self.board is a cell object
+
+d. How do we access a cell on the board?
+    we are able to access a cell on the board using row and column indexes, like self.board[row][col]
+
+e. How do we change the type of a cell?
+    we can change the type of cell by accessing the cell and calling one of its methods, "become_player()" , "become_empty()", "become_food()" or "become_enemy()"

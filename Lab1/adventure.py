@@ -46,16 +46,19 @@ def adventure():
 
     print()
 
-    # First decision
+    # Ask the user to choose the first path
     choice = input("Do you take the left path or right path? [left / right] ")
 
+    #if player chooses left path, they lose health 
     if choice == "left":
         health = health - 20
         print("You chose the left path and lost 20 health.")
         print("Health: {}".format(health))
 
+        #ask for second choice on left path
         choice2 = input("Do you fight or hide? [fight / hide] ")
 
+        #decide ending based on user second choice
         if choice2 == "fight":
             print("You fight the Spartan and rescue Ally. You win!")
         elif choice2 == "hide":
@@ -63,13 +66,17 @@ def adventure():
         else:
             print("That was not a choice. You lose.")
 
+    #if player chooses right path, they lose mana
     elif choice == "right":
         mana = mana - 20
         print("You chose the right path and used 20 mana.")
         print("Mana: {}".format(mana))
 
+        #ask second choice on right path
         choice2 = input("Do you run or sneak? [run / sneak] ")
 
+
+        #decide ending based on player's second choice
         if choice2 == "sneak":
             print("You sneak past the Spartans and rescue Ally. You win!")
         elif choice2 == "run":
@@ -77,9 +84,11 @@ def adventure():
         else:
             print("That was not a choice. You lose.")
 
+    #any first choice other than left/right ends game
     else:
         print("That was not a choice. You lose.")
 
+    #return 0 to show function has finished running
     return 0
 
 
@@ -94,11 +103,13 @@ def create_player():
     player_name = input("Before we begin, what should I call you? ")
     player_class = input("What is your specialty? [Warrior / Mage] ")
 
+    #keep asking until the user enters valid class
     while player_class != "Warrior" and player_class != "Mage":
         print("Please choose Warrior or Mage.")
         player_class = input("What is your specialty? [Warrior / Mage] ")
 
+    #return both values to the adventure() function
     return player_name, player_class
 
-
+# start game by calling adventure() function
 win = adventure()

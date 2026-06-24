@@ -1,0 +1,16 @@
+2.3 Adding Food Pseudocode
+
+add_food():
+    Pick a random row
+    Pick a random column
+    Get a cell at that row and column
+    If cell is empty: 
+        Change cell to Food
+        Add cell to the food list
+        Decrease the number of empty cells by 1
+
+eat_food(cell):
+    Remove the cell from the food list
+    Increase score by 1
+    Increase number of empty cells by 1
+    
