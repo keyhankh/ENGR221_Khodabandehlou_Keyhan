@@ -1,6 +1,7 @@
+
 """ TODO
 Author: Keyhan Khodabandehlou
-Stores data for board, player position, food, enemies and game state for Antarctic Survival game.  
+Stores and updates the board, player position, food, enemies, and game state for the Antarctic Survival game.
 """
 
 import random
@@ -163,14 +164,14 @@ class GameData:
 
     def add_food(self) -> None:
         """ Adds food to a random open spot on the board """
-
+        # Chooses a random row and random column on the board 
         # Find a row on the board
         row = random.randrange(0, Preferences.NUM_ROWS)
         # Find a col on the board
         col = random.randrange(0, Preferences.NUM_COLS)
 
         cell = self.board[row][col]
-
+        #gets the cell object at that row and column; checks whether food is empty -> changes cell so it becomes food cell -> keeps tracks of where food is 
         if cell.is_empty():
             cell.become_food()
             self.food.append(cell)

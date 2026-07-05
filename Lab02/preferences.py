@@ -4,6 +4,8 @@ Defines constants to be used for the program.
 You do NOT need to modify this file.
 """
 
+"keeps game settings all in one place"
+
 import pygame
 import os 
 
@@ -25,7 +27,7 @@ class Preferences:
     GAMEOVER_FONT_SIZE = 50
     GAMEOVER_FONT = pygame.font.SysFont(None, GAMEOVER_FONT_SIZE)
     GAMEOVER_FONT_COLOR = pygame.Color('red')
-    GAMEOVER_TEXT = "You were eaten by a seal!\nPress any key to exit."
+    GAMEOVER_TEXT = "Monch Monch Monch. The seal caught you!\nPress any key to exit."
 
 
     ##########

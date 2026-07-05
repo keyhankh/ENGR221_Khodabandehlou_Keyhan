@@ -63,9 +63,9 @@ class Controller:
                 key_pressed = True
                 # Change directions
                 if event.key in self.Keypress.LEFT.value:
-                    self.game_data.move_player_left()
+                    self.game_data.move_player_left() #attribute that keeps track of the game state
                 elif event.key in self.Keypress.RIGHT.value:
-                    self.game_data.move_player_right()
+                    self.game_data.move_player_right() 
                 elif event.key in self.Keypress.UP.value:
                     self.game_data.move_player_up()
                 elif event.key in self.Keypress.DOWN.value:
@@ -82,9 +82,9 @@ class Controller:
             # Update the enemies
             self.update_enemies()
             # Increment the number of cycles 
-            self.__num_cycles += 1
+            self.__num_cycles += 1 # integer counting how many game cycles have passed 
             # Update the screen
-            self.display.draw_board(self.game_data)
+            self.display.draw_board(self.game_data) #attribute object used to draw the board
 
     def update_food(self) -> None:
         """ Add food every FOOD_ADD_RATE cycles """

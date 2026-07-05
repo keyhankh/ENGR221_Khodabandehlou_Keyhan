@@ -1,4 +1,4 @@
-2.4 Add Enemy Mechanics Pseudocode
+2.4 Enemy Mechanics Pseudocode
 
 add_enemy():
     Get the bottom right cell of the board
