@@ -1,0 +1,73 @@
+Part 1: game_data.py
+
+a. How is the player’s location on the board represented?  
+
+The player's location is represented by the first Cell in the body list. 
+The body list contains Cell objects, and self.body[0] is the current player/head cell.
+
+
+
+b. What method(s) are given to help access different parts of the player’s “body”?
+
+get_player returns the head of the player/body list, which is self.body[0]. 
+get_tail() returns the last cell in the body list, which is self.body[-1].
+
+
+
+c. What are the different movement modes of the player, and what do they mean in terms of how the player moves each turn?
+
+The movement modes are GOING_NORTH, GOING_SOUTH, GOING_EAST, GOING_WEST, and AI_MODE. 
+The first four are manual movement directions.
+ AI_MODE means the program should choose the next move automatically using the AI search algorithm.
+
+
+
+ d. Note that the player’s next step is determined in the move_player() method. What is the current behavior of get_next_cell()? get_next_cell_ai()? 
+ get_next_cell() returns the neighboring cell in the direction the player is currently moving. 
+ It checks current_mode and returns the north, south, east, or west neighbor of the player.
+
+ get_next_cell_ai() currently resets the cells for search and creates either a Stack for DFS or a Queue for BFS. 
+ However, the search algorithm has not been implemented yet, so it currently just returns a random neighbor of the player.
+
+
+
+
+Part 2: Stacks and Queues
+a. When you add an item to a stack, where should it be added? (beginning/end) 
+
+For the Stack class, add() should add an item to the end of the list. 
+
+
+
+b. When you remove an item from a stack, which item should be removed? (beginning/end)
+
+For the Stack class, remove() should remove the item from the end of the list. 
+
+
+
+c. When you add an item to a queue, where should it be added? (beginning/end) 
+
+For the Queue class, add() should add the item to the end of the list. 
+
+
+
+d. When you remove an item from a queue, which item should be removed? (beginning/end) 
+
+For the Queue class, remove() should remove the item from the beginning of the list. 
+
+
+
+Part 3: 
+
+a. What happens when you run AI mode with DFS? Explain why the player behaves in this way.
+
+When using DFS, the player can still find food, but it may take a longer path than DFS. 
+DFS follows one path as far as it can before checking for other paths, so it doens't always choose the closest food. 
+
+
+
+b. Will DFS or BFS find a shorter path to a food? Why? 
+
+BFS will usually find the shorter path to food. BFS checks all cells that are located one move away, 
+then all cells two moves away, then three, and such. Since every move has same 'cost', BFS finds the shortest 
+path. DFS doesn't gaurantee shortest path though. 

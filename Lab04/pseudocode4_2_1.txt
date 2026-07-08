@@ -1,0 +1,21 @@
+2.1 Pseudocode to modify move_player_to_cell
+
+
+move_player_to_cell(cell):
+
+    if cell is outside the board or cell is part of the body:
+        set game to over
+
+    else if cell has food: 
+        change current player cell into body
+        change food cell into the new player
+        add the new player cell to the front of the body list
+        remove the food from the food list
+        add 1 to the overall score
+
+    else if cell is empty: 
+        change the current player cell into body
+        change the empty cell into the new player
+        add the new player cell to the front of the body list
+        remove the last cell from the body list
+        change that old tial cell into empty
