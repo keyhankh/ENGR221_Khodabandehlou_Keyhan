@@ -1,0 +1,27 @@
+2.1 Player Movement Pseudocode
+
+
+FUNCTION draw_curve_recursive_helper(length, depth)
+
+    IF depth is less than 0
+        RAISE an error
+
+    ELSE IF depth equals 0
+        MOVE the turtle forward by length
+
+    ELSE
+        CALL draw_curve_recursive_helper(length / 3, depth - 1)
+
+        TURN the turtle left 60 degrees
+
+        CALL draw_curve_recursive_helper(length / 3, depth - 1)
+
+        TURN the turtle right 120 degrees
+
+        CALL draw_curve_recursive_helper(length / 3, depth - 1)
+
+        TURN the turtle left 60 degrees
+
+        CALL draw_curve_recursive_helper(length / 3, depth - 1)
+
+END FUNCTION

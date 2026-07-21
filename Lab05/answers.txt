@@ -1,0 +1,41 @@
+Part 1: Introduction to the assignment and code
+
+a. How do the draw_snowflake_recursive() and draw_snowflake_stack() functions draw a full snowflake?
+
+Both methods initialize the turtle and use a loop that runs three times. Each time through the loop, one side of the Koch snowflake is drawn. 
+After each side, the turtle turns left 120 degrees. Drawing three sides with 120-degree turns creates the complete snowflake shape.
+
+
+
+b. How many “sides” of the snowflake does each initial call of draw_curve_recursive() and draw_curve_stack() draw?
+
+Each initial call draws one side of the snowflake. The draw_snowflake_recursive() and draw_snowflake_stack() methods call their curve method three times to draw all three sides.
+
+
+
+c. How does get_time_and_mem() find the total time that a method takes to run?
+
+The method records the starting time using time.perf_counter(). It then runs the provided function while measuring its memory usage. After the function finishes, it records the ending time. 
+The total runtime is calculated by subtracting the starting time from the ending time.
+
+
+
+
+
+
+Part 4: Compare the recursive and non-recursive methods
+
+a. What was the memory and time taken by each method?
+
+Recursive memory usage:
+Non-recursive memory usage:
+Recursive time taken:
+Non-recursive time taken:
+
+
+
+b. Explain why these results align with what the methods are doing under the hood.
+
+The recursive method repeatedly calls itself, so Python must store information for each active function call on the call stack.
+This creates additional memory overhead. The non-recursive method avoids recursive function calls, but it explicitly stores drawing commands in a list that acts as a stack. 
+Both methods perform the same drawing operations, so their runtimes may be similar, although differences can occur because recursive calls and explicit stack operations have different overhead.

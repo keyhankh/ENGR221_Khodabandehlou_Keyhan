@@ -1,0 +1,33 @@
+FUNCTION draw_curve_stack
+
+    CREATE a stack containing:
+        ("add_curve", initial length, initial depth)
+
+    WHILE the stack is not empty
+
+        REMOVE the top command from the stack
+
+        IF the command is "add_curve"
+
+            IF depth equals 0
+                MOVE the turtle forward by length
+
+            ELSE
+                SET smaller_length to length / 3
+                SET smaller_depth to depth - 1
+
+                PUSH the fourth add_curve command
+                PUSH a turn_left command
+                PUSH the third add_curve command
+                PUSH a turn_right command
+                PUSH the second add_curve command
+                PUSH a turn_left command
+                PUSH the first add_curve command
+
+        ELSE IF the command is "turn_left"
+            TURN the turtle left 60 degrees
+
+        ELSE IF the command is "turn_right"
+            TURN the turtle right 120 degrees
+
+END FUNCTION
