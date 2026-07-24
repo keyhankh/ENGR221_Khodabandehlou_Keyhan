@@ -1,0 +1,119 @@
+PART 2: Planting the Seeds
+
+2.1a. What are the values of NodeType and what do they represent? 
+
+The values of NodeType are SCHOOL, PROGRAM, and FACULTY. 
+SCHOOL is used to represent the School of Engineering root node, 
+PROGRAM represents an engineering department
+FACULTY represents an individual professor
+
+
+
+2.1b. How might a node know whether it is a leaf? 
+
+A node will know whether it is a leaf by having no children. 
+The code does this by checking whether the 'children's list' is empty.
+
+
+
+2.1c. What does the height of a node refer to? 
+
+The height of a node is the number of amount of edges in the longest path from the node to a leaf. 
+A leaf node would have a height of 0. 
+
+
+
+2.1d. What does the depth of a node refer to? 
+
+The depth of a node is used to refer to the number of edges between that node and the root of the tree. 
+The root has a depth of 0. 
+
+
+
+2.1e. How can you traverse through a tree to find a particular value (i.e., last_name)?
+
+You are able to to recursively check the current node and then search each of the node's children. 
+If a node with the requested value is found, it is returned. If the tree is searched 
+without a match, None will be returned. 
+
+
+
+
+
+
+
+
+
+PART 3: Department Meeting
+
+3.1a. What is the data type of faculty_dict? What are the keys and values? How would you access 
+the information for a particular professor? 
+
+faculty_dict is a mapping category. Its keys are professor last names stores as 'str', and its 
+values are 'Professor' objects. 
+
+
+
+3.1b. What is the data type of program_structure? 
+
+program_structure is a TreeNote data type, which is a custom class data type. 
+TreeNode represents the root of the engineering faculty tree. 
+
+
+
+
+3.1c. In the import_faculty() method, what data is stored in the pandas data frame variable "df"? 
+What does the lambda function do? 
+
+The lambda function is applied to every row in the DataFrame. For each row, it calls self.add_prof(x, faculty_dict), 
+where x is the current professor's row. 'add_prof()' method uses that info to create a Professor object
+and add it to the faculty_dict. 
+
+
+
+
+
+
+
+
+
+PART 4: Office hours now in session
+
+4.1a. What is the type of self.faculty? What data does it store? 
+
+self.faculty is a dictionary (dict). It stores faculty members using last names as keys 
+and Professor objects as their values. Each Professor object contains info like Profesor's 
+first name, last name, program, rank, office, and their headshot. 
+
+
+
+
+4.1b. What is the type of self.root? How are we able to access the rest of the tree given only the root? 
+
+self.root is a TreeNode object. It is used to represent the root of the 'tree', which is the School of Engineering. 
+We are able to access the rest of the tree since every TreeNode has a children list. 
+Starting from the root, following its children, to the program nodes, 
+and then follow those nodes' children to reach the faculty nodes.
+
+
+
+
+4.1c. Analyze the draw_tree() method. In what order are the nodes of the tree drawn (i.e., level-order, in-order, pre-order, post-order)?
+
+Nodes are drawn in pre-order. draw_tree() method first draws the current node, then loops through its children and recursively draws
+each child's subtree. This means the parent is drawn before its children. 
+
+
+
+
+
+4.1d. Starting from run(), trace how user_text is updated and passed between methods to display information about the requested faculty member when the Return button is pressed. 
+What method does it get passed to? 
+
+In run(), user_text starts as an empty string. As the user types, each letter is added to user_text. 
+If backspack is pressed, the last letter is removed. 
+When Return is pressed, user_text is cleaned up and passed to the show_info() method: 
+
+self.show_info(user_text.strip().capitalize())
+
+Then user_text is cleared up so the user can type another name. 
