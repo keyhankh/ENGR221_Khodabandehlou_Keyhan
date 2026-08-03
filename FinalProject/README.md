@@ -51,3 +51,30 @@ Each player ID is used as a key:
 
 ```python
 self.players[player.player_id] = player
+
+
+
+## How to Use the Program
+
+When the program starts, it loads the player data from the CSV file and displays a menu.
+
+Enter the number for the option you want to use, each correlating with an action. 
+
+
+Choose option 1, Enter the player ID:
+
+Choose option 2, then enter the new player’s information.
+
+Choose option 3, then enter the player ID you want to remove.
+
+Choose option 4 to display every player stored in the system.
+
+Choose option 5, then enter a national team.
+
+Choose option 6, then enter one of the following positions: Goalkeeper, Defender, Midfielder, Forward
+
+Choose option 7 to display the player with the highest tournament rating.
+
+Choose option 8 to display the ten players with the highest tournament ratings.
+
+Choose option 9 to close the program.
