@@ -12,6 +12,19 @@ The program reads player information from a CSV file and stores each unique play
 
 The program allows the user to search for players, add players, delete players, display player records, search by team or position, and view the highest-rated players.
 
+
+## Runtime Analysis
+
+Search by player ID: O(1) average case
+Insert player: O(1) average case
+Delete player: O(1) average case
+Display all players: O(n)
+Search by team: O(n)
+Search by position: O(n)
+Find top-rated player: O(n)
+Sort and display top players: O(nlogn)
+
+
 ## Dataset
 
 The program uses the following dataset:
